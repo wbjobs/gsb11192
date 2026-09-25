@@ -1,0 +1,93 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f5f6f8;
+  color: #222;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+h1 { font-size: 24px; margin-bottom: 8px; }
+.hint { color: #666; font-size: 14px; margin-bottom: 24px; }
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  border: 2px dashed #b8c0cc;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  color: #556;
+  font-size: 15px;
+  transition: border-color .15s, background .15s;
+}
+.dropzone:hover, .dropzone.dragover {
+  border-color: #4a7dff;
+  background: #f0f5ff;
+}
+
+.result { margin-top: 28px; }
+
+.preview-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+#preview {
+  max-width: 220px;
+  max-height: 160px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+  background: repeating-conic-gradient(#ddd 0 25%, #fff 0 50%) 0 0 / 16px 16px;
+}
+.meta { font-size: 13px; color: #666; line-height: 1.8; }
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.swatch {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  padding: 0;
+  font: inherit;
+  transition: transform .1s;
+}
+.swatch:hover { transform: translateY(-2px); }
+.swatch .color {
+  height: 56px;
+  display: flex;
+  align-items: flex-end;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.swatch .info {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #444;
+  line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+.swatch .info .hex { font-weight: 600; color: #111; }
+
+.tip { margin-top: 12px; font-size: 12px; color: #999; }
+.status { margin-top: 16px; font-size: 14px; color: #4a7dff; min-height: 20px; }
+.status.error { color: #d33; }
+.status.ok { color: #1a9e4b; }
