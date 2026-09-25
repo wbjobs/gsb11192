@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片主色调提取 · 调色板生成</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <h1>图片主色调提取</h1>
+  <p class="subtitle">本地选择图片，提取 5–8 色调色板。所有处理在浏览器本地完成，图片不会上传。</p>
+
+  <div id="dropZone" class="dropzone" role="button" tabindex="0">
+    <p>点击选择图片，或将图片拖拽到此处</p>
+    <p class="hint">支持 JPG / PNG / WebP / GIF 等常见格式，含超大图片</p>
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <p id="status" class="status"></p>
+
+  <div id="preview" class="preview" hidden>
+    <img id="previewImg" alt="图片预览">
+  </div>
+
+  <section id="result" hidden>
+    <div class="result-head">
+      <h2>调色板</h2>
+      <span id="meta" class="meta"></span>
+      <button id="copyAll" class="copy-all">复制全部 HEX</button>
+    </div>
+    <div id="palette" class="palette"></div>
+  </section>
+</main>
+<script src="main.js"></script>
+</body>
+</html>
